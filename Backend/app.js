@@ -1,7 +1,9 @@
 const express = require("express");
 const mysql = require("mysql2");
+const cors = require("cors");
 const app = express();
 const port = 4000;
+app.use(cors())
 app.use(express.json());
 const db = mysql.createConnection({
   password: "demoApp",
@@ -19,7 +21,7 @@ db.connect((err) => {
 
 app.post("/add-employee", (req, res) => {
   const { password, email, last_name, first_name } = req.body;
-  console.log(req.body);
+
   const sql = `
   INSERT INTO employee_test (first_name, last_name, email, password)
   VALUES (?, ?, ?, ?)`;
