@@ -1,13 +1,11 @@
-// Import express and path modules.
-const express = require("express");
-const path = require("path");
-// Create an express app.
+import express from "express";
+
 const app = express();
-// Serve the static files from the React app.
-app.use(express.static(path.join(__dirname, "dist")));
-// Redirect every request to index.html
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+
+app.get("/", (req, res) => {
+  res.send("Basic route test!");
 });
-// Listen to the default port 80
-app.listen(80);
+
+app.listen(3000, () => {
+  console.log("Server running");
+});
