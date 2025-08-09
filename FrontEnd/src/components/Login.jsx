@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 setMessage('')
 setError('')
-    const url = "http://16.16.201.23:4000/login";
+    const url = "http://16.16.201.23:80/login";
     const config = {
       method: "POST",
       headers: {
