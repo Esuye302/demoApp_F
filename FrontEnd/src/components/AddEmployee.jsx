@@ -19,7 +19,7 @@ const AddEmployee = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = " http://16.16.201.23:80/add-employee";
+    const url = " http://16.16.201.23:4000/add-employee";
     const config = {
       method: "POST",
       headers: {
